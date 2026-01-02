@@ -1,6 +1,6 @@
 
 
-```markdown
+
 # 💵 Fake Currency Detection System Using CNN and Computer Vision
 
 A GUI-based Fake Currency Detection System that analyzes Indian currency notes using **Computer Vision techniques** with an **extendable CNN-based classification pipeline**.  
@@ -167,14 +167,5 @@ Open Jupyter Notebook and execute in the following order:
 * Web or mobile application
 * Dataset expansion and augmentation
 
----
-
-## 👤 Author
-
-**Musarrat Nazia**
-Final Year Undergraduate
-Domain: Artificial Intelligence | Computer Vision
-
----
 
 
