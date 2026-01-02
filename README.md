@@ -1,209 +1,180 @@
 
-# 💵 Fake Currency Detection System Using CNN
 
-A hybrid **Computer Vision + Convolutional Neural Network (CNN)** based system for detecting **fake Indian ₹500 currency notes**.  
-The system analyzes multiple **currency security features**, provides **feature-wise pass/fail results**, and delivers an **overall authenticity decision** through an interactive GUI.
+```markdown
+# 💵 Fake Currency Detection System Using CNN and Computer Vision
 
----
-
-## 📌 Project Overview
-
-Counterfeit currency is a major economic and security concern.  
-This project presents a **multi-stage fake currency detection system** that combines:
-
-- **Classical Computer Vision techniques** for explainable feature verification  
-- **CNN-based learning (extensible module)** for intelligent classification  
-- **GUI-based interaction** for ease of use
-
-The system validates currency authenticity by examining **10 critical security features** commonly found in genuine Indian ₹500 notes.
+A GUI-based Fake Currency Detection System that analyzes Indian currency notes using **Computer Vision techniques** with an **extendable CNN-based classification pipeline**.  
+The system verifies multiple **security features** of currency notes and presents **feature-wise analysis with PASS/FAIL status** through an interactive interface.
 
 ---
 
-## 🧠 Key Highlights
+## 📌 Project Description
 
-- ✔️ Hybrid **CNN + Rule-Based CV Architecture**
-- ✔️ Analysis of **10 currency security features**
-- ✔️ Feature-wise **PASS / FAIL** classification
+Counterfeit currency is a major challenge to financial security.  
+This project implements a **feature-driven fake currency detection system** that examines **visual security elements** of Indian currency notes (₹500 and ₹2000).
+
+The system is divided into:
+1. **Starting GUI** – Image selection & currency type
+2. **Detection Engine** – Feature extraction and verification
+3. **Ending GUI** – Feature-wise result visualization
+
+A **CNN-based model** is proposed as an extensible module for intelligent classification and future enhancement.
+
+---
+
+## 🧠 Core Features
+
+- ✔️ Detection of fake currency notes using image processing
+- ✔️ Analysis of **multiple security features**
+- ✔️ Feature-wise **PASS / FAIL** evaluation
 - ✔️ ORB + SSIM similarity matching
-- ✔️ Bleed line detection on both edges
-- ✔️ Serial number character validation
-- ✔️ Scrollable Tkinter-based result GUI
-- ✔️ Modular & explainable pipeline
+- ✔️ Bleed line detection (left & right)
+- ✔️ Serial number character analysis
+- ✔️ Scrollable Tkinter GUI
+- ✔️ Modular and explainable design
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **Python 3**
+- **Python**
 - **OpenCV**
 - **NumPy**
 - **Tkinter**
-- **PIL (Pillow)**
+- **Pillow (PIL)**
 - **Matplotlib**
 - **Scikit-image (SSIM)**
-- **CNN (Extensible / Training-ready module)**
+- **CNN (Design-ready / Extensible module)**
 
 ---
 
-## 🧩 System Architecture
+## 📁 Repository Structure
 
 ```
 
-Input Currency Image
-↓
-Preprocessing (Resize, Noise Removal, Grayscale)
-↓
-CNN-Based Classification (Real / Fake) [Optional / Extensible]
-↓
-Feature-Level Verification (10 Features)
-├── ORB + SSIM (Features 1–7)
-├── Bleed Line Detection (Features 8–9)
-└── Serial Number Analysis (Feature 10)
-↓
-Rule-Based Decision Engine
-↓
-Result Visualization via GUI
+├── .ipynb_checkpoints/
+├── Dataset/
+│   └── Fake Notes/
+├── In/
+│   ├── 500 Testing.ipynb
+│   ├── 2000 Testing.ipynb
+│   ├── controller.ipynb
+│   ├── gui 1.ipynb
+│   ├── gui 2.ipynb
+│   ├── Untitled.ipynb
+│   ├── Image_not_found.jpg
+│   └── FAKE CURRENCY DETECTOR REPORT.pdf
 
 ```
 
 ---
 
-## 🔍 Currency Security Features Analyzed
-
-| Feature No. | Security Feature |
-|------------|------------------|
-| 1–7 | Structural pattern similarity using ORB + SSIM |
-| 8 | Left-side bleed line detection |
-| 9 | Right-side bleed line detection |
-| 10 | Serial number character count verification |
-
----
-
-## 📊 Decision Logic
-
-- Each feature returns **PASS** or **FAIL**
-- Final result is calculated as:
+## 🧩 System Workflow
 
 ```
 
-X / 10 features PASSED
+User Input Image
+↓
+GUI (Image Selection & Currency Type)
+↓
+Preprocessing (Resize, Color Conversion)
+↓
+Feature Extraction & Matching
+├── ORB + SSIM (Visual Features)
+├── Bleed Line Detection
+└── Serial Number Analysis
+↓
+Rule-Based Decision Logic
+↓
+Result Visualization (Ending GUI)
 
 ````
 
-- Higher pass count → Higher authenticity confidence
-- CNN output (if enabled) strengthens final classification
+---
+
+## 🔍 Security Features Analyzed
+
+| Feature Category | Description |
+|-----------------|-------------|
+| Structural Features | ORB + SSIM-based pattern similarity |
+| Bleed Lines | Left and Right edge detection |
+| Serial Number | Character count verification |
+| Overall Decision | Feature aggregation logic |
 
 ---
 
-## 🖥️ Graphical User Interface (GUI)
+## 🖥️ Graphical User Interface
 
-### 1️⃣ Starting GUI
-- Select input currency image
-- Choose currency denomination
-- Submit image for analysis
+### 🔹 Starting GUI
+- Allows users to:
+  - Select currency image from system
+  - Choose denomination (₹500 / ₹2000)
+  - Submit image for analysis
 
-### 2️⃣ Ending GUI
+### 🔹 Ending GUI
 - Displays:
-  - Original input image
-  - Feature-wise processed images
-  - SSIM scores and statistics
+  - Input image
+  - Feature-wise extracted images
+  - Similarity scores and statistics
   - PASS / FAIL status for each feature
-  - Final authenticity summary
-- Scroll-enabled layout for better visualization
+  - Final authenticity result
 
 ---
 
 ## ▶️ How to Run the Project
 
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/your-username/fake-currency-detection-cnn.git
-cd fake-currency-detection-cnn
-````
-
-### 2️⃣ Install Dependencies
-
+### 1️⃣ Install Required Libraries
 ```bash
 pip install opencv-python numpy pillow matplotlib scikit-image
-```
+````
 
-> Optional (for CNN extension):
+### 2️⃣ Run Notebooks
 
-```bash
-pip install tensorflow keras
-```
+Open Jupyter Notebook and execute in the following order:
 
-### 3️⃣ Run the Application
-
-```bash
-python main.py
-```
+1. `gui 1.ipynb` → Starting GUI
+2. `controller.ipynb` → Feature extraction & analysis
+3. `gui 2.ipynb` → Result visualization
 
 ---
 
-## 📁 Project Structure
+## 🧪 CNN Module (Proposed)
 
-```
-├── Dataset/
-│   └── 500_Features_Dataset/
-├── gui_start.py
-├── preprocessing.py
-├── cnn_model.py            # (Optional / Extensible)
-├── feature_extraction.py
-├── decision_engine.py
-├── gui_result.py
-├── main.py
-├── requirements.txt
-└── README.md
-```
-
----
-
-## 🧪 CNN Module (Design Note)
-
-* CNN is designed to:
+* CNN can be integrated to:
 
   * Classify notes as **Genuine / Fake**
-  * Learn discriminative visual patterns
-* Can be trained using:
+  * Improve robustness over handcrafted features
+* Intended for future work and research extension
 
-  * Labeled real & fake currency images
-* CNN output is intended to **augment** rule-based decisions
-
-> This hybrid design ensures **accuracy + explainability**, making it suitable for academic and research use.
+> This hybrid approach improves **accuracy + explainability**, making it suitable for academic projects.
 
 ---
 
-## 🎓 Academic & Research Relevance
+## 🎓 Academic Relevance
 
-* Suitable for:
-
-  * Final Year Project
-  * Computer Vision / AI Mini Project
-  * IEEE Conference Paper
-* Demonstrates:
-
-  * Hybrid AI system design
-  * Explainable AI concepts
-  * Feature-based verification
-  * GUI-driven ML application
+* Final Year Engineering Project
+* Computer Vision / Image Processing
+* AI-based Security Applications
+* Suitable for IEEE conference submissions
 
 ---
 
 ## 🚀 Future Enhancements
 
-* Full CNN model training and integration
-* Multi-denomination support (₹100, ₹200)
+* Full CNN training and deployment
+* Support for additional denominations
 * Real-time camera input
 * Web or mobile application
 * Dataset expansion and augmentation
 
 ---
 
+## 👤 Author
 
-
+**Musarrat Nazia**
+Final Year Undergraduate
+Domain: Artificial Intelligence | Computer Vision
 
 ---
-
 
 
