@@ -152,7 +152,7 @@ Open Jupyter Notebook and execute in the following order:
 
 ## 🎓 Academic Relevance
 
-* Final Year Engineering Project
+* Internship Project
 * Computer Vision / Image Processing
 * AI-based Security Applications
 * Suitable for IEEE conference submissions
