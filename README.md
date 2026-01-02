@@ -193,7 +193,7 @@ python main.py
 ## 🚀 Future Enhancements
 
 * Full CNN model training and integration
-* Multi-denomination support (₹100, ₹200, ₹2000)
+* Multi-denomination support (₹100, ₹200)
 * Real-time camera input
 * Web or mobile application
 * Dataset expansion and augmentation
